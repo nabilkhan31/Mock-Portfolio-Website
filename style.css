@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-image: url('images/space.png');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    animation: fade 2s;
+}
+
+/* I wrote this code by myself */
+
+/* This stylesheet contains all the general styles that I want all my html files to contain. First I import a font from fonts.google.com then i reset the margin and the padding. Then I set box-sizing border box so that it takes margin and padding into account when specifying the width or height */
+
+/* In the body, I set the background image which is just space with the stars as the my portfolio is based on me being an astronaut, then everything in the body is centred and an animation is set so that all elements fade when loaded into */

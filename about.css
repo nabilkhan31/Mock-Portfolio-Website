@@ -1,0 +1,111 @@
+/* I wrote this code by myself */
+/* This makes it so that when you click on the button, it scrolls smoothly to the element we targeted */
+* {
+    scroll-behavior: smooth;
+}
+body {
+    margin-bottom: 1000px; /* creates space at bottom of page */
+}
+
+/* makes button invisible essentially so that we can style it later, font size increased */
+button {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+}
+
+/* It cant be wider than 968px, margin of 100px top and bottom, then auto left and
+right, background, border, and border-radius all designed. Text is aligned to center
+and a transition of 2 seconds is set to all properties */
+.container {
+    max-width: 968px;
+    margin: 100px auto;
+    background-color: white;
+    border: solid 3px black;
+    border-radius: 15px;
+    text-align: center;
+    left: 20%;
+    transition: all 2s;
+}
+
+/* the button we see is styled, width cannot go below 150px and padding is added
+, the text is algined to center and cursor is set to pointer so that user can see
+it is clickable */
+.show-button {
+    height: 300px;
+    min-width: 150px;
+    padding: 50px 15px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* display none makes it invisible, cursor set back to normal */
+.invisible-content {
+    display: none;
+    cursor: default;
+}
+
+/* this margin separates the button and the mini introduction */
+.container .about{
+    margin-bottom: 70px;
+}
+
+/* display set to flex so that the close button and the introduction
+are displayed side by side */
+.container {
+    display: flex;
+}
+
+/* when the invis content has a class of show button, it is now visible
+and becomes display block. The width is 60 viewing width and can't go 
+over 800px in width */
+.invisible-content.show-button {
+    display: block;
+    width: 60vw;
+    max-width: 800px;
+    justify-content: space-evenly;
+}
+
+/* The about section is styled with a white background, round edges and it is
+placed at the bottom of the page with a z index of -1 so that it does not
+appear in front of the nav bar */
+.about-section {
+    background-color: white;
+    border-radius: 15px;
+    position: absolute;
+    top: 160%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    width: 50%;
+    padding: 50px;
+}
+
+/* bullet points made square, text set to the left */
+.hobbies ul {
+    list-style: square;
+    text-align: left;
+}
+
+/* list items given space between each other */
+.hobbies ul li{
+    line-height: 1.5em;
+    margin-bottom: 20px;
+}
+
+/* adds space between the list and the about me header */
+.about-section h2 {
+    margin-bottom: 20px;
+}
+
+/* makes it responsive, items are displayed in a column  */
+@media(max-width: 768px){
+    .container {
+        padding: 50px 0;
+        flex-direction: column;
+    }
+
+    .about-section {
+        min-width: 350px;
+    }
+}

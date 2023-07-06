@@ -1,0 +1,120 @@
+/* Styling the header, making it fixed so that it stays on the screen
+even when the user scrolls */
+
+/* I wrote this code by myself */
+.header {
+    background-color: #222;
+    position: fixed;
+    width: 100%;
+    animation: fade .7s;
+    position: fixed;
+    top: 0%;
+    z-index: 1;
+}
+
+/* Header will fade in when the website loads */
+/* I wrote this code by myself */
+@keyframes fade{
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+/* styles logo in top left, removes underline and makes text bigger */
+/* I did not write this */
+.logo a{
+    color: white;
+    font-weight: 800;
+    font-size: 20px;
+    text-decoration: none;
+    padding-left: 20px;
+}
+
+/* makes logo be on left and nav links on the right, sets height of header */
+/* I did not write this */
+.nav-bar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 70px;
+}
+
+/* removes bullet points */
+/* I did not write this */
+.nav-item {
+    list-style: none;
+    margin: 60px 0;
+    font-size: 25px;
+}
+
+/* makes links white and removes bullet points, removes underline */
+/* I wrote this */
+.nav-item a{
+    color: white;
+    text-decoration: none;
+}
+
+/* When hovering over options, colour is blue */
+/* I did not write this */
+.nav-item a:hover {
+    color: steelblue;
+}
+
+/* Makes it so that the bars are stacked on top of each other */
+.hamburger {
+    display: block; /* I did not write this */
+
+    /* I wrote this code by myself */
+    cursor: pointer;
+    z-index: 100;
+    padding-right: 20px;
+}
+
+/* I did not write this code */
+/* Draws the bars */
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: white;
+}
+
+.nav-links {
+    /* Arranges the options in a column */
+    display: flex;
+    flex-direction: column;
+
+    /* Makes it stay on top of screen */
+    position: fixed;
+    top: 0%;
+    
+    /* I wrote this code by myself
+    Hides the nav bar at the top */
+    top: -100%;
+    background-color: #111;
+
+    /* nav bar covers 60% of top, and goes from left side to 
+    right side of the window, text is centered and it takes 
+    0.8 seconds to come out/ go back in */
+    height: 60%;
+    width: 100%;
+    text-align: center;
+    transition: all 0.8s;
+    z-index: 100;
+}
+
+/* I wrote this code by myself */
+/* Brings out the nav if it has the active role, adds shadow to the other elements */
+.nav-links.active {
+    top: 0%;
+    box-shadow: 0 0 0 max(100vh, 100vw) rgba(0, 0, 0, 0.7);
+}
+
+/* I wrote this code by myself */
+@media(max-width: 768px){
+    /* adds responsiveness, makes the font smaller when smaller screen */
+    .nav-item {
+        font-size: 15px;
+    }
+}

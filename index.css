@@ -1,0 +1,93 @@
+
+/* I wrote this code by myself, this entire file */
+
+/* Container which holds all the skills and the image is styled 
+here, the color and background color are high contrast, there are rounded
+corners and it is a flex with space-between. The image of the astronaut
+is side by side with the text */
+.container {
+    color: #222;
+    width: 60vw;
+    height: 500px;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* this targets the image and makes it circular with a border around, 
+it also sets the width to 20% of the viewport and sets a margin to the left*/
+#astronaut {
+    border: 4px solid #222;
+    border-radius: 50%;
+    width: 20vw;
+    margin-left: 5vw;
+}
+
+/* This lays out the header and the text and the button which says next
+in a column with a gap of 30px */
+.skill {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+    text-align: center;
+    padding: 0 30px;
+}
+
+/* styles the header text */
+.skill-header {
+    font-size: 30px;
+    font-weight: 100px;
+}
+
+/* Makes the text lighter and gives its dimensions, a minimum and maximum so that
+it does not compress or spread out too much */
+.skill-description {
+    max-width: 500px;
+    min-width: 200px;
+    min-height: 150px;
+    padding-right: 20px;
+    opacity: 0.7;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* animation which fades in and out by altering opacity */
+@keyframes fade{
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+/* adds responsiveness */
+@media(max-width: 768px) {
+
+    /* elements now displayed in a column */
+    .container {
+        display: block;
+        min-width: 400px;
+        font-size: 1em;
+        height: 550px;
+    }
+
+    /* decreases font size to make it responsive */
+    .skill-header {
+        font-size: 20px;
+    }
+    /* sets padding back to 0, min-width min-height so that the text
+    does not compress too much */
+    .skill-description {
+        min-width: 300px;
+        min-height: 150px;
+        margin: 30px auto;
+        padding: 0;
+    }
+
+    /* margin to separate the image from the text, minimum width */
+    #astronaut {
+        min-width: 100px;
+        margin: 20px 0;
+    }
+}

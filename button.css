@@ -1,0 +1,47 @@
+/* The link is styled to look like a button with a dark background, 
+round corners, padding, a shadow to make it look like it's in front
+ of everything else and 3D. Using transform it is placed in the center,
+ overflow is hidden as when the gray colour is expanding, without overflow
+ being hidden it would create a large circle that comes outside of the 
+ "button" */
+.btn {
+    background-color: #222;
+    border-radius: 15px;
+    padding: 30px 50px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.6);
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+/* This makes sure the text appears above  */
+.btn span {
+    position: relative;
+    z-index: 10;
+}
+
+/* This initialises where the gray expanding will begin from, 
+it will begin from the center with a width of 0 and a height of 0 so
+that you cannot see it as of yet. It expands as a circle so the border
+radius is 50% and the width and the height expand at a time of 0.6s */
+.btn::before{
+    content: "";
+    position: absolute;
+    background-color: gray;
+    width: 0;
+    height: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    transition: width 0.6s, height 0.6s;
+}
+
+/* when button is hovered, the gray expands to this width and height over
+0.6 seconds */
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}

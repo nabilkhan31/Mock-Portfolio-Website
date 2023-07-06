@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="button.css">
+</head>
+<body>
+    <!-- This is the nav bar, with my name in the top left and then the hamburger
+         menu is set up to be on the right with the three options, Home, About
+          and References -->
+    <!-- I did not write this code below -->
+    <header class="header">
+        <nav class="nav-bar">
+            <div class="logo">
+                <a href="index.html">Nabil Khan</a>
+            </div>
+
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="references.html">References</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- This code sets up the display for the first card we see on the screen
+         when we load up the about page, it contains a button which you click
+         to reveal the text behind, which gives a short introduction of myself.
+         It also containas a button which links to a separate part of the page,
+         scrolling to it when the button is pressed. -->
+
+    <!-- I wrote this code below this point -->
+    <div class="container">
+        <button class="show-button boxes">Open About Me</button>
+        <div class="invisible-content boxes">
+           <div class="about">
+                My name is Nabil Khan and I am 28 years old. I currently have a BSc Computer Science degree and also an MSc in Artifical Intelligence. At the moment I am unemployed due to recently completing my mission on Mars, so I am actively searching for work.
+           </div>
+           <div class="button-area">
+                <a href="#about-me" class="btn">
+                    <span>
+                        Read More
+                    </span>
+                </a>
+            </div>
+        </div>
+   </div>
+
+   <!-- This about section contains my hobbies and interests with a heading of
+     About me. Then there is a div which contains an unordered list with many 
+     list items which describe some of my hobbies.  -->
+     
+   <section class="about-section">
+        <h2 id="about-me">About Me</h2>
+        <div class="hobbies">
+            <ul>
+                <li class="hobby">
+                    I like going to the gym as it clears my mind, keeps me healthy and also keeps me in shape. It's also a great way to build discipline.
+                </li>
+                <li class="hobby">
+                    Sketching is another one of my hobbies due to how peaceful it is and how rewarding it feels when you've completed a piece that you're proud of. As well as this, it allows you to express yourself, similar to coding.
+                </li>
+                <li class="hobby">
+                    I also enjoy scouting for new food places. This is mainly because I like trying foods that I haven't tried before as it's always exciting eating food from a different culture.
+                </li>
+                <li class="hobby">
+                    Lastly, I enjoy travelling, From seeing historical monuments that have stood for hundreds of years to just relaxing on the beach watching the waves crash.
+                </li>
+            </ul>
+        </div>
+    </section>
+    <script src="index.js"></script>
+    <script src="about.js"></script>
+</body>
+</html>

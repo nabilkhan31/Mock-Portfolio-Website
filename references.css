@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #edf2f8;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7em;
+    font-size: 13px;
+}
+/* I wrote this code */
+/* sets the maximum width which the grid can't be wider than ,
+creates a grid with 4 columns and a gap of 30px. z-index of -1 so that
+it does not show in front of the nav bar*/
+.references {
+    max-width: 1100px;
+    margin: 100px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr;
+    gap: 30px;
+    position: absolute;
+    top: 0%;
+    z-index: -1;
+}
+
+/* The card in which the reference is on is being styled here,
+box-shadow is used to make it look 3D and border radius makes it rounded */
+.reference {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 48px 100px rgba(0,0,0,0.3);
+    margin-bottom: 20px;
+}
+
+/* The header contains an image which is next to a paragraph and 
+a h3 tag and they are displayed side by side*/
+.reference-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* This targets the h3 element in the header and aligns the text
+to the left */
+.reference-header h3 {
+    font-size: 15px;
+    text-align: left;
+}
+
+/* Creates a border around an image, makes the picture circular */
+.reference-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid #333;
+    object-fit: cover;
+}
+
+/* No longer bold text, 1.2rem = 1.2 root element */
+.reference-description {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    text-align:left;
+}
+
+/* This spans the columns, these are pseudoselectors which
+basically select the 1st child, or the first element which is in reference  */
+.reference:nth-of-type(1){
+    grid-column: 1/3;
+    /* spans from column 1 to 3 */
+}
+
+.reference:nth-of-type(3){
+    grid-column: 1/4;
+    grid-row: 2/3;
+    /* spans from column 1 to 4 and from row 2 to 3 */
+}
+
+.reference:nth-of-type(4){
+    grid-column: 4/5;
+    grid-row: 1/3;
+    /* spans from column 4 to 5 and from row 1 to 3 */
+}
+
+/* allows for responsive design */
+@media(max-width: 768px){
+
+    /* now the profile picture and the name are displayed on top of each other
+    and also they are aligned in the center not the left */
+    .reference-header {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    /* This targets the h3 element and changes text alignment */
+    .reference-header h3{
+        text-align: center;
+    }
+    .reference-description {
+        text-align: center;
+    }
+
+    /* This changes all the grid columns to 1fr so they are all the same size,
+    now all of the references will have their own line and have a seperate row */
+    .references {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .reference:nth-of-type(1){
+        grid-column: 1;
+    }
+    
+    .reference:nth-of-type(3){
+        grid-column: 1;
+        grid-row: 3;
+    }
+    
+    .reference:nth-of-type(4){
+        grid-column: 1;
+        grid-row: 4;
+    }
+}
